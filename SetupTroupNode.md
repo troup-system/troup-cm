@@ -3,10 +3,10 @@ Set up a new troup node device
 
 # Create ansible user account
 
-Create the user account without shell (/bin/false), but create the home dir, so we can add the RSA keys later on:
+Create the user account with shell (/bin/bash) and create the home dir, so we can add the RSA keys later on:
 
 ```
-sudo useradd -s /bin/false -m ansible
+sudo useradd -m ansible
 ```
 
 # Add the authorized keys
@@ -14,7 +14,7 @@ sudo useradd -s /bin/false -m ansible
 Log in with the newly created ansible account:
 
 ```
-sudo su -s /bin/bash ansible
+sudo su ansible
 ```
 Then cd into the home directory and create a directory called ```.ssh```:
 
