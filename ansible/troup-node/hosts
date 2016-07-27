@@ -1,0 +1,8 @@
+# Ansible hosts file
+
+# Virtual machines cluster configuration
+[vcluster]
+#device 1
+device1.lan
+# device 2
+device2.lan
