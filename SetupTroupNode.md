@@ -5,9 +5,24 @@ Set up a new troup node device
 
 Create the user account with shell (/bin/bash) and create the home dir, so we can add the RSA keys later on:
 
-```
+```!bash
 sudo useradd -m ansible
 ```
+
+## Add NOPASSWD policy in the sudoers file
+
+Account used by ansible should have a sudo permission, but we do not want to enter password interactively or pass it on command line, so we need to add a NOPASSWD policy in the sudoers file:
+
+Type:
+```
+sudo visudo
+```
+and then add this at the end of the file:
+```
+# ansible NOPASSWD policy
+ansible ALL = (ALL) NOPASSWD: ALL
+```
+
 
 # Add the authorized keys
 
