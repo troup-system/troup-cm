@@ -10,8 +10,29 @@
       apt:
         name: python3.4
       become: true
-    - name: install pip (for python 3.4)
+    - name: install python2 (ensure version 2.7)
+      apt:
+        name: python2.7
+      become: true
+    - name: install pip3 (for python 3.4)
       apt:
         name: python3-pip
+        state: latest
+      become: true
+    - name: install pip (for python 2.7)
+      apt:
+        name: python-pip
+        state: latest
+      become: true
+    - name: install supervisord
+      pip:
+        executable: pip
+        name: supervisor
+        state: latest
+      become: true
+    - name: install troup
+      pip:
+        executable: pip3
+        name: troup
         state: latest
       become: true
