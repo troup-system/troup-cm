@@ -36,3 +36,12 @@
         name: troup
         state: latest
       become: true
+    - name: Add troup user
+      user:
+        name: troup
+        shell: /bin/false
+        createhome: no
+        generate_ssh_key: yes
+        group: troup
+        ssh_key_bits: 2048
+        ssh_key_file: ~/.ssh/id_rsa
